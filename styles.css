@@ -100,7 +100,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     
 }
 
-@media  (max-width:900px) {
+@media  (max-width:850px) {
     .countdown-container, .Timeline-container  {
         max-width: 500px;
     }
