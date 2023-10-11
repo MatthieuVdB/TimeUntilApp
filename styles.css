@@ -1,0 +1,259 @@
+/* styles.css
+Mustard #E3B448
+Sage #CBD18F
+Forest Green #3A6B35
+
+*/
+body {
+    font-family: Arial, sans-serif;
+    background: #CBD18F;
+    text-align: center;
+    margin: auto;
+
+}
+
+
+#add-event{
+    margin-top: 25px;
+    font-size: 16px;
+    border-radius: 10%; 
+}
+
+#event-name , #event-date{  
+    max-height: 15px;
+    padding:10px;
+    margin:10px 0;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+}
+
+#event-name:hover , #event-date:hover{
+    
+    box-shadow: 0px 0px 4px 4px #CBD18F;
+}
+
+input[type="date"] {
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent; 
+}
+
+#add-button{
+    cursor: pointer;
+    background-color: #3A6B35;
+    color: #CBD18F;
+    border-radius: 10px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px;
+    box-shadow: #2b4d27 0 -6px 8px inset;
+}
+
+
+#add-button:hover{
+    background-color: #2e532a;
+    color: #e5ec90;
+}
+
+.countdown-container {
+    width: 100%;
+    max-width: 900px;
+    min-width: 100px;
+    height: 150px;
+    margin:  2% auto;
+    padding: 2%;    
+    border-radius: 10px;
+    background-color:#E3B448;
+    color :#3A6B35;
+    box-shadow: 2px 8px 28px 10px #523202;
+    
+}
+
+
+.Timeline-container {
+    width: 100%;
+    max-width: 900px;
+    min-width: 100px;
+    height: auto;
+    margin:  2% auto;
+    padding: 5% 2%;    
+    border-radius: 10px;
+    background-color:#E3B448;
+    color :#3A6B35;
+    box-shadow: 2px 8px 28px 10px #523202;
+    
+}
+
+@media  (max-width:900px) {
+    .countdown-container, .Timeline-container  {
+        max-width: 500px;
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+#timeline-year{
+    height: 25px;
+    display: flex;
+    align-items: center;
+    margin:0;
+}
+
+#innerYear{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    margin:0;
+}
+
+.timeline-thisYear{
+    color: #3A6B35;
+    border-bottom : 4px solid #3A6B35;
+}
+
+.timeline-nextYear{
+    color: #3A6B35;
+    border-bottom : 4px solid #3A6B35;
+    border-left:4px solid #3A6B35;
+}
+
+
+#timeline-month{
+    height: 25px;
+    display: flex;
+    align-items: center;
+    margin:0;
+}
+
+#innerMonth{
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin-top:-4px;
+}
+
+.timeline-M :first-child{
+    border-right : 4px solid #3A6B35;
+}
+
+.timeline-M:not(:first-child){
+    border-left : 4px solid #3A6B35;
+}
+
+.timeline-M {
+    display:inline-block;
+    height: auto;
+    color: #3A6B35;
+    margin: 0;
+    padding-top: 3px;
+}
+
+
+
+#events-list{
+    margin-top: 10px;
+}
+
+#eventItem{
+    font-size: 15px;
+    display: flex;
+    align-items:center;
+}
+ 
+ #eventItemBar{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    min-height:30px;
+    font-weight: bold;
+    height: auto;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 2px 2px 2px #523202;
+/*     opacity: 65%;
+ */    color:black;
+    margin-top: 2px;
+ }
+
+.daysItem{
+    text-align: left;
+    text-wrap: nowrap;
+    text-indent: 5px;
+/*     border: 1px solid black;
+ */}
+
+
+
+#eventDate{
+    position: absolute;
+    left:25%;
+    width:auto;
+    height:auto;
+    text-align: center;
+    background:transparent;
+    color:black;
+    font-weight: bold;
+    padding:3px;
+    border: 3px solid #3A6B35;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #523202;
+    display: none;
+}
+
+#eventItem:hover #eventDate{
+    display:block;
+  }
+
+.nameItem{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    text-align: left;
+    font-weight: bold;
+    text-wrap: nowrap;
+    color: black;
+    width: 100%;
+}
+
+.close-icon {
+    cursor: pointer;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 20px;
+    font-weight: bold;
+    width: 30px;
+    color:black;
+ }

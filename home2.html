@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Tracker</title>
+</head>
+<body>
+    <ul id="eventList"></ul>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const events = [];
+
+            function updateEventList() {
+                const eventListElement = document.getElementById('eventList');
+                eventListElement.innerHTML = '';
+
+                events.forEach(event => {
+                    const li = document.createElement('li');
+                    li.textContent = `${event.name} - ${event.date} (${event.daysUntil} days)`;
+
+                    const cross = document.createElement('span');
+                    cross.textContent = '❌';
+                    cross.style.cursor = 'pointer';
+                    cross.addEventListener('click', function() {
+                        removeEvent(event);
+                    });
+
+                    li.appendChild(cross);
+                    eventListElement.appendChild(li);
+                });
+            }
+
+            function addEvent(name, date) {
+                const currentDate = new Date();
+                const eventDate = new Date(date);
+                const daysUntil = Math.ceil((eventDate - currentDate) / (1000 * 60 * 60 * 24));
+
+                events.push({name, date, daysUntil});
+                updateEventList();
+            }
+
+            function removeEvent(event) {
+                const index = events.indexOf(event);
+                if (index > -1) {
+                    events.splice(index, 1);
+                    updateEventList();
+                }
+            }
+
+            document.getElementById('addEventButton').addEventListener('click', function() {
+                const name = document.getElementById('eventName').value;
+                const date = document.getElementById('eventDate').value;
+                addEvent(name, date);
+            });
+        });
+    </script>
+
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName"><br>
+
+    <label for="eventDate">Event Date:</label>
+    <input type="date" id="eventDate"><br>
+
+    <button id="addEventButton">Add Event</button>
+</body>
+</html>
