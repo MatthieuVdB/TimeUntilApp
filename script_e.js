@@ -168,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const maxMonth = events[countMaxIdx].eventMonth; 
         const endDay = events[countMaxIdx].eventDay;    
 
-        const addDays = 0;
 
 
             // Dynamically create the MONTHS headers
@@ -177,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // if all events happen the same year
             if (maxYear === currentYear){
-                
+                console.log('Just this year')
             // Dynamically create the YEAR headers
                 const thisYear = document.createElement('div');
                 thisYear.classList.add('timeline-thisYear');
@@ -186,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 innerYear.appendChild(thisYear);
                 const M = document.createElement('div');
 
-                for (let mth = currentmonth-1; mth < maxMonth+1; mth++){
+                for (let mth = currentmonth-1; mth < maxMonth; mth++){
                     const M = document.createElement('div');
                     M.classList.add('timeline-M');
                     M.textContent = months[mth];
@@ -206,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // If EVENTS spread on 2 different years
             else if (maxYear>currentYear){
+                console.log('there is 2 different years')
             // LOOP through MONTH of the 1st Year and get the width of each month element
                 for (let mth = currentmonth-1; mth < months.length; mth++){
                     const M = document.createElement('div');
