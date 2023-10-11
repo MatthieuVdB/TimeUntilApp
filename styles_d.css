@@ -29,7 +29,6 @@ body {
 }
 
 #event-name:hover , #event-date:hover{
-    
     box-shadow: 0px 0px 4px 4px #CBD18F;
 }
 
@@ -100,11 +99,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     
 }
 
-/* @media  (max-width:950px) {
-    .countdown-container, .Timeline-container  {
-        max-width: 350px;
+@media  (max-width:950px) {
+    #event-name , #event-date{  
+    max-height: 10px;
+    padding:4px;
+    margin:4px 0;
+    border-radius:4px;
     }
-    } */
+    #add-button{
+        font-size: 12px;
+        padding: 2px;
+        margin: 0;
+        width: auto;
+        height: auto;
+        border-radius:4px;
+    }
+} 
 
 
 

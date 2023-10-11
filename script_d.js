@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const daysItem = document.createElement('span');
         daysItem.classList.add('daysItem');
-        daysItem.textContent = event.countDays + ' days' ;
+        daysItem.textContent = event.countDays;
 
         const barItemClose = document.createElement('span');
         barItemClose.classList.add('close-icon');
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         innerList.appendChild(eventItem);
         eventItem.appendChild(eventItemBar);
         eventItemBar.appendChild(daysItem); 
-        if ( (event.countDays*100/(arrMax+addDays))  < 20){
+        if ( (event.countDays*100/(arrMax+addDays))  < 15){
             eventItemDAteName.style.textAlign = 'left';
             eventItem.appendChild(eventItemDAteName);}
         else {eventItemBar.appendChild(eventItemDAteName);}
