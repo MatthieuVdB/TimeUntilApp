@@ -121,6 +121,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     #add-button, #reset-button{
         font-size: 12px;
         padding: 2px ;
+        height: 30px;
         border-radius:4px;
     }
     #div-button, #add-event, #todaySdate{
