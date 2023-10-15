@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Application</title>
-    <link rel="stylesheet" href="styles_d.css">
+    <link rel="stylesheet" href="styles_j.css">
 </head>
 <body>
     <div class="countdown-container">
-        <h1>Event Countdown</h1>        
+        <h1 id="title">Event Countdown</h1>        
         <div id="add-event">
             <input type="text" id="event-name" placeholder="Event name">
             <input type="date" id="event-date">
-            <button id="add-button">Add Event</button>
         </div>
+        <div id="div-button">
+            <button id="reset-button">Reset</button>
+            <button id="add-button">Add</button>
+        </div>
+        <div id="todaySdate"></div>
     </div>
     <div class="Timeline-container">
         <div id="timeline-year"><div id="innerYear"></div></div>
@@ -21,6 +25,6 @@
         <div id="events-list"><div id="innerList"></div></div>
     </div> 
 
-    <script src="script_d.js"></script>
+    <script src="script_j.js"></script>
 </body>
 </html>
