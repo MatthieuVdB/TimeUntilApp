@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const daysItem = document.createElement('span');
         daysItem.classList.add('daysItem');
-        daysItem.textContent = event.countDays + ' days' ;
+        daysItem.textContent = event.countDays ;
 
         const barItemClose = document.createElement('span');
         barItemClose.classList.add('close-icon');
@@ -119,13 +119,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const eventItemDAteName = document.createElement('div');
         eventItemDAteName.id='eventDate';     
         let strring = event.eventDay + '/' + event.eventMonth + " : " +  event.eventName ;
-        eventItemDAteName.textContent = strring;  
+        eventItemDAteName.textContent = strring;    
+        eventItemDAteName.style.width = '100%'; 
 
         innerList.appendChild(eventItem);
         eventItem.appendChild(eventItemBar);
         eventItemBar.appendChild(daysItem); 
-        if ( (event.countDays*100/(arrMax+addDays))  < 15){
-            eventItemDAteName.style.textAlign = 'left';
+        if ( (event.countDays*100/(arrMax+addDays))  < 50){
+            eventItemDAteName.style.textAlign = 'right';  
+            strring = (96- (event.countDays*100/(arrMax+addDays))) + '%';
+            eventItemDAteName.style.width = strring; 
             eventItem.appendChild(eventItemDAteName);}
         else {eventItemBar.appendChild(eventItemDAteName);}
         eventItemBar.appendChild(barItemClose);  

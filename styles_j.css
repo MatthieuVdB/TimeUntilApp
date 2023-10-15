@@ -113,13 +113,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @media  (max-width:950px) {
     #event-name , #event-date, #todaySdate{  
     font-size: 12px;
+    font-weight:800;
     width: 80%;
     max-height: 15px;
     padding:4px;
     border-radius:4px;
     }
     #add-button, #reset-button{
-        font-size: 12px;
+        font-size: 15px;
+        font-weight:800;
         padding: 2px ;
         height: 30px;
         border-radius:4px;
@@ -274,10 +276,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 #eventDate{
-    width:100%;
     text-align: right;
     text-indent: 5px;
-    font-size: 12px;
+    font-size: 14px;
     color:#3A6B35;
     font-weight: bold;
     padding:3px;
