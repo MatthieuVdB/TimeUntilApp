@@ -118,20 +118,33 @@ document.addEventListener('DOMContentLoaded', function() {
                
         const eventItemDAteName = document.createElement('div');
         eventItemDAteName.id='eventDate';     
-        let strring = event.eventDay + '/' + event.eventMonth + " : " +  event.eventName ;
+        let strring = event.eventDay + '/' + event.eventMonth + "..." +  event.eventName ;
         eventItemDAteName.textContent = strring;    
         eventItemDAteName.style.width = '100%'; 
-
+            console.log('lenght of string : ' + strring.length)
         innerList.appendChild(eventItem);
         eventItem.appendChild(eventItemBar);
         eventItemBar.appendChild(daysItem); 
-        if ( (event.countDays*100/(arrMax+addDays))  < 50){
-            eventItemDAteName.style.textAlign = 'right';  
+        if ( (event.countDays*100/(arrMax+addDays))<85){
+            strring = event.eventDay + '/' + event.eventMonth;
+            eventItemDAteName.textContent = strring;    
+            eventItemBar.appendChild(eventItemDAteName);
+            const eventItemName = document.createElement('div');
+            eventItemName.id="eventDate";
+            strring =  '...' + event.eventName;
+            eventItemName.textContent = strring;    
             strring = (96- (event.countDays*100/(arrMax+addDays))) + '%';
-            eventItemDAteName.style.width = strring; 
-            eventItem.appendChild(eventItemDAteName);}
-        else {eventItemBar.appendChild(eventItemDAteName);}
-        eventItemBar.appendChild(barItemClose);  
+            eventItemName.style.width = strring; 
+            eventItemName.style.textAlign = 'left'; 
+            eventItem.appendChild(eventItemName);
+        }
+        else {eventItemBar.appendChild(eventItemDAteName);
+        }
+        if ( (event.countDays*100/(arrMax+addDays))  < 95){
+            eventItem.appendChild(barItemClose);
+            eventItem.style.textAlign='right';}  
+        else {eventItemBar.appendChild(barItemClose);  
+            }
         n++; 
 
         });

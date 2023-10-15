@@ -253,6 +253,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 18px;
     display: flex;
     align-items:center;
+    justify-content: space-between;
 }
  
  #eventItemBar{
@@ -262,7 +263,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     min-height:30px;
     font-weight: bold;
     height: auto;
-    border-radius: 0 8px 8px 0;
+    border-radius: 2px 8px 8px 2px;
     box-shadow: 2px 2px 2px 2px #523202;
     color:black;
     margin-top: 2px;
